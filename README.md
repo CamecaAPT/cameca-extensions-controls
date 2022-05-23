@@ -1,3 +1,3 @@
-# Cameca.CustomAnalysis.Interface
+# Cameca.Extensions.Controls
 
-Interfaces and base classes for developing a custom analysis for CAMECA AP Suite.
+ WPF controls that can be used to build custom interfaces with native appearance and standard functionality for CAMECA AP Suite extensions .
