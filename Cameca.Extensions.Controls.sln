@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cameca.Extensions.Controls", "Cameca.Extensions.Controls\Cameca.Extensions.Controls.csproj", "{D41B2666-3BDC-4C01-8BB6-5ABA1C5E2555}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{15DED9F9-155C-4CD7-86E7-8B54387AE110}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		Cameca.png = Cameca.png
+		GitVersion.yml = GitVersion.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{7077ACA0-CCD7-4D63-8BBD-4C7981D5D719}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{0167CAB5-E7E2-4B0A-8614-6E84CFB885EC}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\preview-deployment.yml = .github\workflows\preview-deployment.yml
+		.github\workflows\release-deployment.yml = .github\workflows\release-deployment.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D41B2666-3BDC-4C01-8BB6-5ABA1C5E2555}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D41B2666-3BDC-4C01-8BB6-5ABA1C5E2555}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D41B2666-3BDC-4C01-8BB6-5ABA1C5E2555}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D41B2666-3BDC-4C01-8BB6-5ABA1C5E2555}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7077ACA0-CCD7-4D63-8BBD-4C7981D5D719} = {15DED9F9-155C-4CD7-86E7-8B54387AE110}
+		{0167CAB5-E7E2-4B0A-8614-6E84CFB885EC} = {7077ACA0-CCD7-4D63-8BBD-4C7981D5D719}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2DB6C402-3981-4926-B807-75F7E189DFCA}
+	EndGlobalSection
+EndGlobal
