@@ -8,6 +8,7 @@ namespace Cameca.Extensions.Controls;
 public class Chart2D : Control
 {
 	private static readonly IEnumerable DataSourceDefault = Enumerable.Empty<object>();
+	private const bool IsLogScaleYDefault = false;
 	private const bool IsLegendVisibleDefault = false;
 	private const Projection2D ProjectionDefault = Projection2D.XZ;
 
@@ -36,6 +37,15 @@ public class Chart2D : Control
 	{
 		get => (string)GetValue(AxisYLabelProperty);
 		set => SetValue(AxisYLabelProperty, value);
+	}
+
+	public static readonly DependencyProperty IsLogScaleYProperty = DependencyProperty.Register(
+		nameof(IsLogScaleY), typeof(bool), typeof(Chart2D), new PropertyMetadata(IsLogScaleYDefault));
+
+	public bool IsLogScaleY
+	{
+		get => (bool)GetValue(IsLogScaleYProperty);
+		set => SetValue(IsLogScaleYProperty, value);
 	}
 
 	public static readonly DependencyProperty ChartPaddingProperty = DependencyProperty.Register(
