@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Linq;
+using System.Numerics;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -64,6 +65,33 @@ public class Chart2D : Control
 	{
 		get => (bool)GetValue(IsLegendVisibleProperty);
 		set => SetValue(IsLegendVisibleProperty, value);
+	}
+
+	public static readonly DependencyProperty ViewportLowerProperty = DependencyProperty.Register(
+		nameof(ViewportLower), typeof(Vector2), typeof(Chart2D), new FrameworkPropertyMetadata());
+
+	public Vector2 ViewportLower
+	{
+		get => (Vector2)GetValue(ViewportLowerProperty);
+		set => SetValue(ViewportLowerProperty, value);
+	}
+
+	public static readonly DependencyProperty ViewportUpperProperty = DependencyProperty.Register(
+		nameof(ViewportUpper), typeof(Vector2), typeof(Chart2D), new FrameworkPropertyMetadata());
+
+	public Vector2 ViewportUpper
+	{
+		get => (Vector2)GetValue(ViewportLowerProperty);
+		set => SetValue(ViewportUpperProperty, value);
+	}
+
+	public static readonly DependencyProperty MouseDataCoordinateProperty = DependencyProperty.Register(
+		nameof(MouseDataCoordinate), typeof(Vector3), typeof(Chart2D), new FrameworkPropertyMetadata());
+
+	public Vector3 MouseDataCoordinate
+	{
+		get => (Vector3)GetValue(ViewportLowerProperty);
+		set => SetValue(MouseDataCoordinateProperty, value);
 	}
 
 	public static readonly DependencyProperty ProjectionProperty = DependencyProperty.Register(
