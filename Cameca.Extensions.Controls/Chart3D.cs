@@ -7,10 +7,10 @@ namespace Cameca.Extensions.Controls;
 
 public class Chart3D : Control
 {
-	private static readonly IEnumerable DataSourceDefault = Enumerable.Empty<object>();
+	public static readonly IEnumerable DataSourceDefault = Enumerable.Empty<object>();
 
 	public static readonly DependencyProperty DataSourceProperty = DependencyProperty.Register(
-		nameof(DataSource), typeof(IEnumerable), typeof(Chart3D), new PropertyMetadata(DataSourceDefault));
+		nameof(DataSource), typeof(IEnumerable), typeof(Chart3D), new FrameworkPropertyMetadata(DataSourceDefault));
 
 	public IEnumerable DataSource
 	{

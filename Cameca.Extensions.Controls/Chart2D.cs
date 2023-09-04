@@ -8,13 +8,15 @@ namespace Cameca.Extensions.Controls;
 
 public class Chart2D : Control
 {
-	private static readonly IEnumerable DataSourceDefault = Enumerable.Empty<object>();
-	private const bool IsLogScaleYDefault = false;
-	private const bool IsLegendVisibleDefault = false;
-	private const Projection2D ProjectionDefault = Projection2D.XZ;
+	public static readonly IEnumerable DataSourceDefault = Enumerable.Empty<object>();
+	public const bool IsLogScaleYDefault = false;
+	public const bool IsLegendVisibleDefault = false;
+	public const bool IsViewportUpdatesEnabledDefault = true;
+	public const bool IsMouseDataCoordinatesEnabledDefault = false;
+	public const Projection2D ProjectionDefault = Projection2D.XZ;
 
 	public static readonly DependencyProperty DataSourceProperty = DependencyProperty.Register(
-		nameof(DataSource), typeof(IEnumerable), typeof(Chart2D), new PropertyMetadata(DataSourceDefault));
+		nameof(DataSource), typeof(IEnumerable), typeof(Chart2D), new FrameworkPropertyMetadata(DataSourceDefault));
 
 	public IEnumerable DataSource
 	{
@@ -23,7 +25,7 @@ public class Chart2D : Control
 	}
 
 	public static readonly DependencyProperty AxisXLabelProperty = DependencyProperty.Register(
-		nameof(AxisXLabel), typeof(string), typeof(Chart2D), new PropertyMetadata("X"));
+		nameof(AxisXLabel), typeof(string), typeof(Chart2D), new FrameworkPropertyMetadata("X") { BindsTwoWayByDefault = true, });
 
 	public string AxisXLabel
 	{
@@ -32,7 +34,7 @@ public class Chart2D : Control
 	}
 
 	public static readonly DependencyProperty AxisYLabelProperty = DependencyProperty.Register(
-		nameof(AxisYLabel), typeof(string), typeof(Chart2D), new PropertyMetadata("Y"));
+		nameof(AxisYLabel), typeof(string), typeof(Chart2D), new FrameworkPropertyMetadata("Y") { BindsTwoWayByDefault = true, });
 
 	public string AxisYLabel
 	{
@@ -41,7 +43,7 @@ public class Chart2D : Control
 	}
 
 	public static readonly DependencyProperty IsLogScaleYProperty = DependencyProperty.Register(
-		nameof(IsLogScaleY), typeof(bool), typeof(Chart2D), new PropertyMetadata(IsLogScaleYDefault));
+		nameof(IsLogScaleY), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(IsLogScaleYDefault) { BindsTwoWayByDefault = true, });
 
 	public bool IsLogScaleY
 	{
@@ -50,7 +52,7 @@ public class Chart2D : Control
 	}
 
 	public static readonly DependencyProperty ChartPaddingProperty = DependencyProperty.Register(
-		nameof(ChartPadding), typeof(Thickness), typeof(Chart2D), new PropertyMetadata(default(Thickness)));
+		nameof(ChartPadding), typeof(Thickness), typeof(Chart2D), new FrameworkPropertyMetadata(default(Thickness)) { BindsTwoWayByDefault = true, });
 
 	public Thickness ChartPadding
 	{
@@ -59,7 +61,7 @@ public class Chart2D : Control
 	}
 
 	public static readonly DependencyProperty IsLegendVisibleProperty = DependencyProperty.Register(
-		nameof(IsLegendVisible), typeof(bool), typeof(Chart2D), new PropertyMetadata(IsLegendVisibleDefault));
+		nameof(IsLegendVisible), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(IsLegendVisibleDefault) { BindsTwoWayByDefault = true, });
 
 	public bool IsLegendVisible
 	{
@@ -67,8 +69,17 @@ public class Chart2D : Control
 		set => SetValue(IsLegendVisibleProperty, value);
 	}
 
+	public static readonly DependencyProperty IsViewportUpdatesEnabledProperty = DependencyProperty.Register(
+		nameof(IsViewportUpdatesEnabled), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(IsViewportUpdatesEnabledDefault) { BindsTwoWayByDefault = true, });
+
+	public bool IsViewportUpdatesEnabled
+	{
+		get => (bool)GetValue(IsViewportUpdatesEnabledProperty);
+		set => SetValue(IsViewportUpdatesEnabledProperty, value);
+	}
+
 	public static readonly DependencyProperty ViewportLowerProperty = DependencyProperty.Register(
-		nameof(ViewportLower), typeof(Vector2), typeof(Chart2D), new FrameworkPropertyMetadata());
+		nameof(ViewportLower), typeof(Vector2), typeof(Chart2D), new FrameworkPropertyMetadata() { BindsTwoWayByDefault = true, });
 
 	public Vector2 ViewportLower
 	{
@@ -77,7 +88,7 @@ public class Chart2D : Control
 	}
 
 	public static readonly DependencyProperty ViewportUpperProperty = DependencyProperty.Register(
-		nameof(ViewportUpper), typeof(Vector2), typeof(Chart2D), new FrameworkPropertyMetadata());
+		nameof(ViewportUpper), typeof(Vector2), typeof(Chart2D), new FrameworkPropertyMetadata() { BindsTwoWayByDefault = true, });
 
 	public Vector2 ViewportUpper
 	{
@@ -85,17 +96,26 @@ public class Chart2D : Control
 		set => SetValue(ViewportUpperProperty, value);
 	}
 
-	public static readonly DependencyProperty MouseDataCoordinateProperty = DependencyProperty.Register(
-		nameof(MouseDataCoordinate), typeof(Vector3), typeof(Chart2D), new FrameworkPropertyMetadata());
+	public static readonly DependencyProperty IsMouseDataCoordinatesEnabledProperty = DependencyProperty.Register(
+		nameof(IsMouseDataCoordinatesEnabled), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(IsMouseDataCoordinatesEnabledDefault) { BindsTwoWayByDefault = true, });
 
-	public Vector3 MouseDataCoordinate
+	public bool IsMouseDataCoordinatesEnabled
 	{
-		get => (Vector3)GetValue(MouseDataCoordinateProperty);
-		set => SetValue(MouseDataCoordinateProperty, value);
+		get => (bool)GetValue(IsMouseDataCoordinatesEnabledProperty);
+		set => SetValue(IsMouseDataCoordinatesEnabledProperty, value);
+	}
+
+	public static readonly DependencyProperty MouseDataCoordinatesProperty = DependencyProperty.Register(
+		nameof(MouseDataCoordinates), typeof(Vector3), typeof(Chart2D), new FrameworkPropertyMetadata() { BindsTwoWayByDefault = true, });
+
+	public Vector3 MouseDataCoordinates
+	{
+		get => (Vector3)GetValue(MouseDataCoordinatesProperty);
+		set => SetValue(MouseDataCoordinatesProperty, value);
 	}
 
 	public static readonly DependencyProperty ProjectionProperty = DependencyProperty.Register(
-		nameof(Projection), typeof(Projection2D), typeof(Chart2D), new PropertyMetadata(ProjectionDefault));
+		nameof(Projection), typeof(Projection2D), typeof(Chart2D), new FrameworkPropertyMetadata(ProjectionDefault) { BindsTwoWayByDefault = true, });
 
 	public Projection2D Projection
 	{
