@@ -81,7 +81,7 @@ public class Chart2D : Control
 
 	public Vector2 ViewportUpper
 	{
-		get => (Vector2)GetValue(ViewportLowerProperty);
+		get => (Vector2)GetValue(ViewportUpperProperty);
 		set => SetValue(ViewportUpperProperty, value);
 	}
 
@@ -90,7 +90,7 @@ public class Chart2D : Control
 
 	public Vector3 MouseDataCoordinate
 	{
-		get => (Vector3)GetValue(ViewportLowerProperty);
+		get => (Vector3)GetValue(MouseDataCoordinateProperty);
 		set => SetValue(MouseDataCoordinateProperty, value);
 	}
 
