@@ -25,7 +25,7 @@ public class Chart2D : Control
 	}
 
 	public static readonly DependencyProperty AxisXLabelProperty = DependencyProperty.Register(
-		nameof(AxisXLabel), typeof(string), typeof(Chart2D), new FrameworkPropertyMetadata("X") { BindsTwoWayByDefault = true, });
+		nameof(AxisXLabel), typeof(string), typeof(Chart2D), new FrameworkPropertyMetadata("X"));
 
 	public string AxisXLabel
 	{
@@ -34,7 +34,7 @@ public class Chart2D : Control
 	}
 
 	public static readonly DependencyProperty AxisYLabelProperty = DependencyProperty.Register(
-		nameof(AxisYLabel), typeof(string), typeof(Chart2D), new FrameworkPropertyMetadata("Y") { BindsTwoWayByDefault = true, });
+		nameof(AxisYLabel), typeof(string), typeof(Chart2D), new FrameworkPropertyMetadata("Y"));
 
 	public string AxisYLabel
 	{
@@ -43,7 +43,7 @@ public class Chart2D : Control
 	}
 
 	public static readonly DependencyProperty IsLogScaleYProperty = DependencyProperty.Register(
-		nameof(IsLogScaleY), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(IsLogScaleYDefault) { BindsTwoWayByDefault = true, });
+		nameof(IsLogScaleY), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(IsLogScaleYDefault));
 
 	public bool IsLogScaleY
 	{
@@ -52,7 +52,7 @@ public class Chart2D : Control
 	}
 
 	public static readonly DependencyProperty ChartPaddingProperty = DependencyProperty.Register(
-		nameof(ChartPadding), typeof(Thickness), typeof(Chart2D), new FrameworkPropertyMetadata(default(Thickness)) { BindsTwoWayByDefault = true, });
+		nameof(ChartPadding), typeof(Thickness), typeof(Chart2D), new FrameworkPropertyMetadata(default(Thickness)));
 
 	public Thickness ChartPadding
 	{
@@ -61,7 +61,7 @@ public class Chart2D : Control
 	}
 
 	public static readonly DependencyProperty IsLegendVisibleProperty = DependencyProperty.Register(
-		nameof(IsLegendVisible), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(IsLegendVisibleDefault) { BindsTwoWayByDefault = true, });
+		nameof(IsLegendVisible), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(IsLegendVisibleDefault));
 
 	public bool IsLegendVisible
 	{
@@ -70,7 +70,7 @@ public class Chart2D : Control
 	}
 
 	public static readonly DependencyProperty IsViewportUpdatesEnabledProperty = DependencyProperty.Register(
-		nameof(IsViewportUpdatesEnabled), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(IsViewportUpdatesEnabledDefault) { BindsTwoWayByDefault = true, });
+		nameof(IsViewportUpdatesEnabled), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(IsViewportUpdatesEnabledDefault));
 
 	public bool IsViewportUpdatesEnabled
 	{
@@ -97,7 +97,7 @@ public class Chart2D : Control
 	}
 
 	public static readonly DependencyProperty IsMouseDataCoordinatesEnabledProperty = DependencyProperty.Register(
-		nameof(IsMouseDataCoordinatesEnabled), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(IsMouseDataCoordinatesEnabledDefault) { BindsTwoWayByDefault = true, });
+		nameof(IsMouseDataCoordinatesEnabled), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(IsMouseDataCoordinatesEnabledDefault));
 
 	public bool IsMouseDataCoordinatesEnabled
 	{
@@ -115,7 +115,7 @@ public class Chart2D : Control
 	}
 
 	public static readonly DependencyProperty ProjectionProperty = DependencyProperty.Register(
-		nameof(Projection), typeof(Projection2D), typeof(Chart2D), new FrameworkPropertyMetadata(ProjectionDefault) { BindsTwoWayByDefault = true, });
+		nameof(Projection), typeof(Projection2D), typeof(Chart2D), new FrameworkPropertyMetadata(ProjectionDefault));
 
 	public Projection2D Projection
 	{

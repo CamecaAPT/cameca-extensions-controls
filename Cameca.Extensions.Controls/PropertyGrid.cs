@@ -17,7 +17,7 @@ public class PropertyGrid : Control
 	public static readonly bool ShowToolPanelDefault = false;
 
 	public static readonly DependencyProperty SelectedObjectProperty = DependencyProperty.Register(
-		nameof(SelectedObject), typeof(object), typeof(PropertyGrid), new FrameworkPropertyMetadata(SelectedObjectDefault) { BindsTwoWayByDefault = true, });
+		nameof(SelectedObject), typeof(object), typeof(PropertyGrid), new FrameworkPropertyMetadata(SelectedObjectDefault));
 
 	public object? SelectedObject
 	{
@@ -26,7 +26,7 @@ public class PropertyGrid : Control
 	}
 
 	public static readonly DependencyProperty SelectedObjectsProperty = DependencyProperty.Register(
-		nameof(SelectedObjects), typeof(IEnumerable), typeof(Table), new FrameworkPropertyMetadata(SelectedObjectsDefault) { BindsTwoWayByDefault = true, });
+		nameof(SelectedObjects), typeof(IEnumerable), typeof(Table), new FrameworkPropertyMetadata(SelectedObjectsDefault));
 
 	public IEnumerable SelectedObjects
 	{
@@ -35,7 +35,7 @@ public class PropertyGrid : Control
 	}
 
 	public static readonly DependencyProperty ExpandButtonsVisibilityProperty = DependencyProperty.Register(
-		nameof(ExpandButtonsVisibility), typeof(Visibility), typeof(PropertyGrid), new FrameworkPropertyMetadata(ExpandButtonsVisibilityDefault) { BindsTwoWayByDefault = true, });
+		nameof(ExpandButtonsVisibility), typeof(Visibility), typeof(PropertyGrid), new FrameworkPropertyMetadata(ExpandButtonsVisibilityDefault));
 
 	public Visibility ExpandButtonsVisibility
 	{
@@ -44,7 +44,7 @@ public class PropertyGrid : Control
 	}
 
 	public static readonly DependencyProperty ExpandCategoriesWhenSelectedObjectChangedProperty = DependencyProperty.Register(
-		nameof(ExpandCategoriesWhenSelectedObjectChanged), typeof(bool), typeof(PropertyGrid), new FrameworkPropertyMetadata(ExpandCategoriesWhenSelectedObjectChangedDefault) { BindsTwoWayByDefault = true, });
+		nameof(ExpandCategoriesWhenSelectedObjectChanged), typeof(bool), typeof(PropertyGrid), new FrameworkPropertyMetadata(ExpandCategoriesWhenSelectedObjectChangedDefault));
 
 	public bool ExpandCategoriesWhenSelectedObjectChanged
 	{
@@ -53,7 +53,7 @@ public class PropertyGrid : Control
 	}
 
 	public static readonly DependencyProperty ShowCategoriesProperty = DependencyProperty.Register(
-		nameof(ShowCategories), typeof(bool), typeof(PropertyGrid), new FrameworkPropertyMetadata(ShowCategoriesDefault) { BindsTwoWayByDefault = true, });
+		nameof(ShowCategories), typeof(bool), typeof(PropertyGrid), new FrameworkPropertyMetadata(ShowCategoriesDefault));
 
 	public bool ShowCategories
 	{
@@ -62,7 +62,7 @@ public class PropertyGrid : Control
 	}
 
 	public static readonly DependencyProperty ShowEditorButtonsProperty = DependencyProperty.Register(
-		nameof(ShowEditorButtons), typeof(bool), typeof(PropertyGrid), new FrameworkPropertyMetadata(ShowEditorButtonsDefault) { BindsTwoWayByDefault = true, });
+		nameof(ShowEditorButtons), typeof(bool), typeof(PropertyGrid), new FrameworkPropertyMetadata(ShowEditorButtonsDefault));
 
 	public bool ShowEditorButtons
 	{
@@ -71,7 +71,7 @@ public class PropertyGrid : Control
 	}
 
 	public static readonly DependencyProperty ShowSearchBoxProperty = DependencyProperty.Register(
-		nameof(ShowSearchBox), typeof(bool), typeof(PropertyGrid), new FrameworkPropertyMetadata(ShowSearchBoxDefault) { BindsTwoWayByDefault = true, });
+		nameof(ShowSearchBox), typeof(bool), typeof(PropertyGrid), new FrameworkPropertyMetadata(ShowSearchBoxDefault));
 
 	public bool ShowSearchBox
 	{
@@ -80,7 +80,7 @@ public class PropertyGrid : Control
 	}
 
 	public static readonly DependencyProperty ShowToolPanelProperty = DependencyProperty.Register(
-		nameof(ShowToolPanel), typeof(bool), typeof(PropertyGrid), new FrameworkPropertyMetadata(ShowToolPanelDefault) { BindsTwoWayByDefault = true, });
+		nameof(ShowToolPanel), typeof(bool), typeof(PropertyGrid), new FrameworkPropertyMetadata(ShowToolPanelDefault));
 
 	public bool ShowToolPanel
 	{
