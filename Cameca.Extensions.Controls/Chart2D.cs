@@ -11,6 +11,7 @@ public class Chart2D : Control
 	public static readonly IEnumerable DataSourceDefault = Enumerable.Empty<object>();
 	public const bool IsLogScaleYDefault = false;
 	public const bool IsLegendVisibleDefault = false;
+	public const bool UseDefaultViewportResetBehaviorDefault = true;
 	public const bool IsViewportUpdatesEnabledDefault = true;
 	public const bool IsMouseDataCoordinatesEnabledDefault = false;
 	public const Projection2D ProjectionDefault = Projection2D.XZ;
@@ -67,6 +68,15 @@ public class Chart2D : Control
 	{
 		get => (bool)GetValue(IsLegendVisibleProperty);
 		set => SetValue(IsLegendVisibleProperty, value);
+	}
+
+	public static readonly DependencyProperty UseDefaultViewportResetBehaviorProperty = DependencyProperty.Register(
+		nameof(UseDefaultViewportResetBehavior), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(UseDefaultViewportResetBehaviorDefault));
+
+	public bool UseDefaultViewportResetBehavior
+	{
+		get => (bool)GetValue(UseDefaultViewportResetBehaviorProperty);
+		set => SetValue(UseDefaultViewportResetBehaviorProperty, value);
 	}
 
 	public static readonly DependencyProperty IsViewportUpdatesEnabledProperty = DependencyProperty.Register(
