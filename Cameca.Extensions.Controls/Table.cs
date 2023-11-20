@@ -7,14 +7,14 @@ namespace Cameca.Extensions.Controls;
 
 public class Table : Control
 {
-	private const bool AutoWidthDefault = false;
-	private static readonly IEnumerable ItemsSourceDefault = Enumerable.Empty<object>();
+	public const bool AutoWidthDefault = false;
+	public static readonly IEnumerable ItemsSourceDefault = Enumerable.Empty<object>();
 
 	public static readonly DependencyProperty AutoWidthProperty = DependencyProperty.Register(
-		nameof(AutoWidth), typeof(bool), typeof(Table), new PropertyMetadata(AutoWidthDefault));
+		nameof(AutoWidth), typeof(bool), typeof(Table), new FrameworkPropertyMetadata(AutoWidthDefault));
 
 	public static readonly DependencyProperty ItemsSourceProperty = DependencyProperty.Register(
-		nameof(ItemsSource), typeof(IEnumerable), typeof(Table), new PropertyMetadata(ItemsSourceDefault));
+		nameof(ItemsSource), typeof(IEnumerable), typeof(Table), new FrameworkPropertyMetadata(ItemsSourceDefault));
 
 	public bool AutoWidth
 	{
