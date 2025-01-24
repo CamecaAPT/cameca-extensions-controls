@@ -26,7 +26,7 @@ public class PropertyGrid : Control
 	}
 
 	public static readonly DependencyProperty SelectedObjectsProperty = DependencyProperty.Register(
-		nameof(SelectedObjects), typeof(IEnumerable), typeof(Table), new FrameworkPropertyMetadata(SelectedObjectsDefault));
+		nameof(SelectedObjects), typeof(IEnumerable), typeof(PropertyGrid), new FrameworkPropertyMetadata(SelectedObjectsDefault));
 
 	public IEnumerable SelectedObjects
 	{
