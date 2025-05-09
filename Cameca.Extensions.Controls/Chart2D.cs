@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.ComponentModel;
 using System.Linq;
 using System.Numerics;
 using System.Windows;
@@ -14,6 +16,7 @@ public class Chart2D : Control
 	public const bool UseDefaultViewportResetBehaviorDefault = true;
 	public const bool IsViewportUpdatesEnabledDefault = true;
 	public const bool IsMouseDataCoordinatesEnabledDefault = false;
+	[Obsolete("Projection will not be editable in future versions for better application compatibility. Remove Projection configuration and use default projection of XZ")]
 	public const Projection2D ProjectionDefault = Projection2D.XZ;
 	public const bool IsToolbarVisibleDefault = true;
 	public const bool UseApplicationViewManagerDefault = false;
@@ -126,9 +129,13 @@ public class Chart2D : Control
 		set => SetValue(MouseDataCoordinatesProperty, value);
 	}
 
+	[Obsolete("Projection will not be editable in future versions for better application compatibility. Remove Projection configuration and use default projection of XZ")]
+	[EditorBrowsable(EditorBrowsableState.Never)]
 	public static readonly DependencyProperty ProjectionProperty = DependencyProperty.Register(
 		nameof(Projection), typeof(Projection2D), typeof(Chart2D), new FrameworkPropertyMetadata(ProjectionDefault));
 
+	[Obsolete("Projection will not be editable in future versions for better application compatibility. Remove Projection configuration and use default projection of XZ")]
+	[EditorBrowsable(EditorBrowsableState.Never)]
 	public Projection2D Projection
 	{
 		get => (Projection2D)GetValue(ProjectionProperty);
