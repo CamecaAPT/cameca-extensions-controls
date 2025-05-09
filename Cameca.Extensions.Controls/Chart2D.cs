@@ -46,7 +46,7 @@ public class Chart2D : Control
 	}
 
 	public static readonly DependencyProperty IsLogScaleYProperty = DependencyProperty.Register(
-		nameof(IsLogScaleY), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(IsLogScaleYDefault));
+		nameof(IsLogScaleY), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(IsLogScaleYDefault) { BindsTwoWayByDefault = true });
 
 	public bool IsLogScaleY
 	{
@@ -64,7 +64,7 @@ public class Chart2D : Control
 	}
 
 	public static readonly DependencyProperty IsLegendVisibleProperty = DependencyProperty.Register(
-		nameof(IsLegendVisible), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(IsLegendVisibleDefault));
+		nameof(IsLegendVisible), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(IsLegendVisibleDefault) { BindsTwoWayByDefault = true, });
 
 	public bool IsLegendVisible
 	{
@@ -136,7 +136,7 @@ public class Chart2D : Control
 	}
 
 	public static readonly DependencyProperty IsToolbarVisibleProperty = DependencyProperty.Register(
-		nameof(IsToolbarVisible), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(IsToolbarVisibleDefault));
+		nameof(IsToolbarVisible), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(IsToolbarVisibleDefault) { BindsTwoWayByDefault = true, });
 
 	public bool IsToolbarVisible
 	{
