@@ -1,5 +1,10 @@
-﻿namespace Cameca.Extensions.Controls;
+﻿using System;
+using System.ComponentModel;
 
+namespace Cameca.Extensions.Controls;
+
+[Obsolete("Projection will not be editable in future versions for better application compatibility. Remove Projection configuration and use default projection of XZ")]
+[EditorBrowsable(EditorBrowsableState.Never)]
 /// <summary>
 /// 2D projections.
 /// </summary>

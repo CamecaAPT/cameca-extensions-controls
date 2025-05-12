@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.ComponentModel;
 using System.Linq;
 using System.Numerics;
 using System.Windows;
@@ -14,8 +16,10 @@ public class Chart2D : Control
 	public const bool UseDefaultViewportResetBehaviorDefault = true;
 	public const bool IsViewportUpdatesEnabledDefault = true;
 	public const bool IsMouseDataCoordinatesEnabledDefault = false;
+	[Obsolete("Projection will not be editable in future versions for better application compatibility. Remove Projection configuration and use default projection of XZ")]
 	public const Projection2D ProjectionDefault = Projection2D.XZ;
 	public const bool IsToolbarVisibleDefault = true;
+	public const bool UseApplicationViewManagerDefault = false;
 
 	public static readonly DependencyProperty DataSourceProperty = DependencyProperty.Register(
 		nameof(DataSource), typeof(IEnumerable), typeof(Chart2D), new FrameworkPropertyMetadata(DataSourceDefault));
@@ -45,7 +49,7 @@ public class Chart2D : Control
 	}
 
 	public static readonly DependencyProperty IsLogScaleYProperty = DependencyProperty.Register(
-		nameof(IsLogScaleY), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(IsLogScaleYDefault));
+		nameof(IsLogScaleY), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(IsLogScaleYDefault) { BindsTwoWayByDefault = true });
 
 	public bool IsLogScaleY
 	{
@@ -63,7 +67,7 @@ public class Chart2D : Control
 	}
 
 	public static readonly DependencyProperty IsLegendVisibleProperty = DependencyProperty.Register(
-		nameof(IsLegendVisible), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(IsLegendVisibleDefault));
+		nameof(IsLegendVisible), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(IsLegendVisibleDefault) { BindsTwoWayByDefault = true, });
 
 	public bool IsLegendVisible
 	{
@@ -125,9 +129,13 @@ public class Chart2D : Control
 		set => SetValue(MouseDataCoordinatesProperty, value);
 	}
 
+	[Obsolete("Projection will not be editable in future versions for better application compatibility. Remove Projection configuration and use default projection of XZ")]
+	[EditorBrowsable(EditorBrowsableState.Never)]
 	public static readonly DependencyProperty ProjectionProperty = DependencyProperty.Register(
 		nameof(Projection), typeof(Projection2D), typeof(Chart2D), new FrameworkPropertyMetadata(ProjectionDefault));
 
+	[Obsolete("Projection will not be editable in future versions for better application compatibility. Remove Projection configuration and use default projection of XZ")]
+	[EditorBrowsable(EditorBrowsableState.Never)]
 	public Projection2D Projection
 	{
 		get => (Projection2D)GetValue(ProjectionProperty);
@@ -135,11 +143,20 @@ public class Chart2D : Control
 	}
 
 	public static readonly DependencyProperty IsToolbarVisibleProperty = DependencyProperty.Register(
-		nameof(IsToolbarVisible), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(IsToolbarVisibleDefault));
+		nameof(IsToolbarVisible), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(IsToolbarVisibleDefault) { BindsTwoWayByDefault = true, });
 
 	public bool IsToolbarVisible
 	{
 		get => (bool)GetValue(IsToolbarVisibleProperty);
 		set => SetValue(IsToolbarVisibleProperty, value);
+	}
+
+	public static readonly DependencyProperty UseApplicationViewManagerProperty = DependencyProperty.Register(
+		nameof(UseApplicationViewManager), typeof(bool), typeof(Chart2D), new FrameworkPropertyMetadata(UseApplicationViewManagerDefault));
+
+	public bool UseApplicationViewManager
+	{
+		get => (bool)GetValue(UseApplicationViewManagerProperty);
+		set => SetValue(UseApplicationViewManagerProperty, value);
 	}
 }
