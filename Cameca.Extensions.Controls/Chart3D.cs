@@ -84,4 +84,46 @@ public class Chart3D : Control
 		get => (bool)GetValue(IsAxisVisibleProperty);
 		set => SetValue(IsAxisVisibleProperty, value);
 	}
+
+	public static readonly DependencyProperty AxisXLabelProperty = DependencyProperty.Register(
+		nameof(AxisXLabel), typeof(string), typeof(Chart2D), new FrameworkPropertyMetadata(null));
+
+	/// <summary>
+	/// Set the label for the X-axis of the 3D chart
+	/// 
+	/// If null, uses application default of "X [nm]"
+	/// </summary>
+	public string? AxisXLabel
+	{
+		get => (string?)GetValue(AxisXLabelProperty);
+		set => SetValue(AxisXLabelProperty, value);
+	}
+
+	public static readonly DependencyProperty AxisYLabelProperty = DependencyProperty.Register(
+		nameof(AxisYLabel), typeof(string), typeof(Chart2D), new FrameworkPropertyMetadata(null));
+
+	/// <summary>
+	/// Set the label for the Y-axis of the 3D chart
+	/// 
+	/// If null, uses application default of "Y [nm]"
+	/// </summary>
+	public string? AxisYLabel
+	{
+		get => (string?)GetValue(AxisYLabelProperty);
+		set => SetValue(AxisYLabelProperty, value);
+	}
+
+	public static readonly DependencyProperty AxisZLabelProperty = DependencyProperty.Register(
+		nameof(AxisZLabel), typeof(string), typeof(Chart2D), new FrameworkPropertyMetadata(null));
+
+	/// <summary>
+	/// Set the label for the Z-axis of the 3D chart
+	/// 
+	/// If null, uses application default of "Z [nm]"
+	/// </summary>
+	public string? AxisZLabel
+	{
+		get => (string)GetValue(AxisZLabelProperty);
+		set => SetValue(AxisZLabelProperty, value);
+	}
 }
