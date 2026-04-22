@@ -86,7 +86,7 @@ public class Chart3D : Control
 	}
 
 	public static readonly DependencyProperty AxisXLabelProperty = DependencyProperty.Register(
-		nameof(AxisXLabel), typeof(string), typeof(Chart2D), new FrameworkPropertyMetadata(null));
+		nameof(AxisXLabel), typeof(string), typeof(Chart3D), new FrameworkPropertyMetadata(null));
 
 	/// <summary>
 	/// Set the label for the X-axis of the 3D chart
@@ -100,7 +100,7 @@ public class Chart3D : Control
 	}
 
 	public static readonly DependencyProperty AxisYLabelProperty = DependencyProperty.Register(
-		nameof(AxisYLabel), typeof(string), typeof(Chart2D), new FrameworkPropertyMetadata(null));
+		nameof(AxisYLabel), typeof(string), typeof(Chart3D), new FrameworkPropertyMetadata(null));
 
 	/// <summary>
 	/// Set the label for the Y-axis of the 3D chart
@@ -114,7 +114,7 @@ public class Chart3D : Control
 	}
 
 	public static readonly DependencyProperty AxisZLabelProperty = DependencyProperty.Register(
-		nameof(AxisZLabel), typeof(string), typeof(Chart2D), new FrameworkPropertyMetadata(null));
+		nameof(AxisZLabel), typeof(string), typeof(Chart3D), new FrameworkPropertyMetadata(null));
 
 	/// <summary>
 	/// Set the label for the Z-axis of the 3D chart
